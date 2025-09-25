@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Padaria Sabor & Tradição - Custos e Projeção</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fffaf4;
+      --accent: #c77b39;
+      --accent-2: #7b3c1c;
+      --muted: #6b6b6b;
+      --card: #ffffff;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--accent-2);
+      padding: 20px;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    .logo {
+      width: 70px;
+      height: 70px;
+      border-radius: 14px;
+      background: linear-gradient(135deg,var(--accent),#f3c9a0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo svg { width: 40px; height: 40px; }
+    h1 {
+      font-size: 24px;
+      margin: 0;
+    }
+    .lead {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 0;
+      margin-bottom: 16px;
+      border-bottom: 2px solid #f0e6da;
+    }
+    .tab {
+      padding: 10px 16px;
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--accent-2);
+      border: none;
+      background: transparent;
+      border-bottom: 3px solid transparent;
+    }
+    .tab:hover { opacity: .85; }
+    .tab.active {
+      border-bottom: 3px solid var(--accent);
+      color: var(--accent);
+    }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    section {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+    }
+    section h2 {
+      margin-top: 0;
+      color: var(--accent);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    thead th {
+      background: #fcebdc;
+      font-weight: 600;
+      text-align: left;
+      padding: 10px;
+    }
+    tbody td {
+      padding: 10px;
+      border-bottom: 1px solid #f0e6da;
+    }
+    .subtotal {
+      text-align: right;
+      font-weight: 600;
+      padding-top: 10px;
+      color: var(--accent-2);
+    }
+    .summary {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 20px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid #f0e6da;
+      font-size: 12px;
+      margin-left: 8px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 36c0-11 9-20 20-20s20 9 20 20H8z" fill="#FFD59E"/>
+          <path d="M12 42c0-9 7-16 16-16s16 7 16 16H12z" fill="#F6A95D"/>
+          <ellipse cx="32" cy="44" rx="20" ry="6" fill="#E68A3D"/>
+        </svg>
+      </div>
+      <div>
+        <h1>Padaria Sabor &amp; Tradição</h1>
+        <p class="lead">Plano de custos e projeções financeiras — modelo otimizado para GitHub Pages</p>
+      </div>
+    </header>
+
+    <div class="tabs" id="tabs">
+      <button class="tab active" data-target="custos">Custos Atuais</button>
+      <button class="tab" data-target="projecao">Projeção Financeira</button>
+      <button class="tab" data-target="otimista">Cenário Otimista <span class="badge">+10% receita/ano</span></button>
+      <button class="tab" data-target="pessimista">Cenário Pessimista <span class="badge">+6% receita / +20% fixos / +25% variáveis</span></button>
+      <button class="tab" data-target="info">Informações do Negócio</button>
+    </div>
+
+    <!-- Aba Custos Atuais -->
+    <div id="custos" class="tab-content active">
+      <section>
+        <h2>Custos Fixos – Operação Mensal</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Custo Fixo</th>
+              <th>Descrição</th>
+              <th>Frequência</th>
+              <th>Valor Estimado (R$)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Aluguel</td><td>Espaço físico da padaria</td><td>Mensal</td><td>3.000,00</td></tr>
+            <tr><td>Energia elétrica mínima</td><td>Consumo básico</td><td>Mensal</td><td>800,00</td></tr>
+            <tr><td>Água</td><td>Conta de água</td><td>Mensal</td><td>200,00</td></tr>
+            <tr><td>Internet/Telefone</td><td>Conexão para pedidos/contato</td><td>Mensal</td><td>150,00</td></tr>
+            <tr><td>Salários (fixos)</td><td>2 atendentes + 1 padeiro</td><td>Mensal</td><td>7.000,00</td></tr>
+            <tr><td>Contabilidade</td><td>Escritório contábil</td><td>Mensal</td><td>400,00</td></tr>
+            <tr><td>Licenças e Alvarás</td><td>Taxas para funcionamento legal</td><td>Anual (≈100/mês)</td><td>100,00</td></tr>
+            <tr><td>Seguros</td><td>Seguro do estabelecimento</td><td>Mensal</td><td>200,00</td></tr>
+          </tbody>
+        </table>
+        <p class="subtotal">💡 Subtotal Custos Fixos Mensais: <strong>R$ 11.850,00</strong></p>
+      </section>
+      <section>
+        <h2>Custos Variáveis – Produção Mensal</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Custo Variável</th>
+              <th>Descrição</th>
+              <th>Frequência</th>
+              <th>Valor Estimado (R$)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Farinha de trigo</td><td>Matéria-prima para pães e bolos</td><td>Conforme produção</td><td>3.000,00</td></tr>
+            <tr><td>Açúcar e fermento</td><td>Ingredientes para produção</td><td>Conforme produção</td><td>1.500,00</td></tr>
+            <tr><td>Embalagens (sacos, caixas)</td><td>Embalar produtos para venda</td><td>Conforme demanda</td><td>500,00</td></tr>
+            <tr><td>Energia extra (fornos)</td><td>Consumo adicional acima do mínimo</td><td>Mensal (varia)</td><td>600,00</td></tr>
+            <tr><td>Mão de obra extra</td><td>Funcionários temporários em datas especiais</td><td>Conforme necessidade</td><td>1.000,00</td></tr>
+            <tr><td>Marketing/Promoções</td><td>Anúncios e divulgação</td><td>Mensal ou sazonal</td><td>300,00</td></tr>
+          </tbody>
+        </table>
+        <p class="subtotal">💡 Subtotal Custos Variáveis Mensais: <strong>R$ 6.900,00</strong></p>
+      </section>
+      <section class="summary">
+        <h2>📊 Resumo Financeiro Mensal</h2>
+        <p>Custos Fixos Mensais: <strong>R$ 11.850,00</strong></p>
+        <p>Custos Variáveis Estimados: <strong>R$ 6.900,00</strong></p>
+        <p>Custo Total Médio Mensal: <strong>R$ 18.750,00</strong></p>
+        <h3>🎯 Conclusão</h3>
+        <p>Com base nesses custos, a Padaria Sabor &amp; Tradição precisa gerar um faturamento acima de <strong>R$ 18.750,00/mês</strong> para cobrir despesas e obter lucro.</p>
+      </section>
+    </div>
+
+    <!-- Aba Projeção Financeira -->
+    <div id="projecao" class="tab-content">
+      <section>
+        <h2>Projeção Financeira (com lucro)</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Ano</th>
+              <th>Receita (R$)</th>
+              <th>Fixos (R$)</th>
+              <th>Variáveis (R$)</th>
+              <th>Lucro (R$)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>2025</td><td>300.000</td><td>142.200</td><td>82.800</td><td><strong>75.000</strong></td></tr>
+            <tr><td>2026</td><td>345.000 (+15%)</td><td>156.420 (+10%)</td><td>91.080 (+10%)</td><td><strong>97.500</strong></td></tr>
+            <tr><td>2027</td><td>396.750 (+15%)</td><td>172.062 (+10%)</td><td>100.188 (+10%)</td><td><strong>124.500</strong></td></tr>
+          </tbody>
+        </table>
+      </section>
+      <section class="summary">
+        <h2>📒 Cálculos Resumidos</h2>
+        <p>Custos anuais: fixos = 11.850 × 12 = 142.200; variáveis = 6.900 × 12 = 82.800.</p>
+        <p>Receita anual: 25.000 × 12 = 300.000; Lucro 2025: 300.000 – 225.000 = 75.000.</p>
+        <p>Crescimento: Receita +15%/ano, Custos +10%/ano.</p>
+        <p>Lucro 2026: 345.000 – (156.420 + 91.080) = 97.500; Lucro 2027: 396.750 – (172.062 + 100.188) = 124.500.</p>
+      </section>
+    </div>
+
+    <!-- Aba Cenário Otimista -->
+    <div id="otimista" class="tab-content">
+      <section>
+        <h2>Projeção — Cenário Otimista (10% ao ano)</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Ano</th>
+              <th>Receita (R$)</th>
+              <th>Fixos (R$)</th>
+              <th>Variáveis (R$)</th>
+              <th>Lucro (R$)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2025</td>
+              <td>1.080.000</td>
+              <td>288.000</td>
+              <td>360.000</td>
+              <td><strong>432.000</strong></td>
+            </tr>
+            <tr>
+              <td>2026</td>
+              <td>1.188.000 (+10%)</td>
+              <td>316.800 (+10%)</td>
+              <td>396.000 (+10%)</td>
+              <td><strong>475.200</strong></td>
+            </tr>
+            <tr>
+              <td>2027</td>
+              <td>1.306.800 (+10%)</td>
+              <td>348.480 (+10%)</td>
+              <td>435.600 (+10%)</td>
+              <td><strong>522.720</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section class="summary">
+        <h2>📊 Análise do Cenário Otimista</h2>
+        <p>➤ Mantendo os custos sob controle e crescendo 10% ao ano, o negócio amplia gradualmente o lucro.</p>
+        <p>📈 Em 2027, o lucro projetado ultrapassa meio milhão de reais anuais, consolidando a sustentabilidade e expansão do empreendimento.</p>
+      </section>
+    </div>
+
+    <!-- Aba Cenário Pessimista -->
+    <div id="pessimista" class="tab-content">
+      <section>
+        <h2>Projeção — Cenário Pessimista</h2>
+        <p class="summary">
+          <strong>De olho no modelo:</strong> se a receita cresce 6% ao ano, mas os custos fixos sobem 20%/ano e os variáveis 25%/ano,
+          o lucro cai rapidamente e pode tornar o negócio insustentável.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Ano</th>
+              <th>Receita anual (+6%)</th>
+              <th>Custos fixos (+20%)</th>
+              <th>Custos variáveis (+25%)</th>
+              <th>Lucro anual</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2025</td>
+              <td>R$ 1.080.000</td>
+              <td>R$ 288.000</td>
+              <td>R$ 360.000</td>
+              <td><strong>R$ 432.000</strong></td>
+            </tr>
+            <tr>
+              <td>2026</td>
+              <td>R$ 1.144.800</td>
+              <td>R$ 345.600</td>
+              <td>R$ 450.000</td>
+              <td><strong>R$ 349.200</strong></td>
+            </tr>
+            <tr>
+              <td>2027</td>
+              <td>R$ 1.213.488</td>
+              <td>R$ 414.720</td>
+              <td>R$ 562.500</td>
+              <td><strong>R$ 236.268</strong></td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="summary">
+          ➤ O lucro cai de <strong>R$ 432.000</strong> para <strong>R$ 236.268</strong> em dois anos. Se essa tendência continuar, o negócio pode entrar em prejuízo. 
+          Isso evidencia como custos descontrolados podem levar uma empresa sustentável ao colapso financeiro.
+        </p>
+      </section>
+    </div>
+
+    <!-- Aba Informações do Negócio -->
+    <div id="info" class="tab-content">
+      <section>
+        <h2>Informações do Negócio</h2>
+        <p class="summary">
+          <strong>Nome:</strong> Padaria Sabor &amp; Tradição<br>
+          <strong>Natureza:</strong> Negócio social de produção e venda de pães, bolos e doceria, com foco em qualidade artesanal e preço justo.<br>
+          <strong>Missão:</strong> Oferecer produtos frescos e acessíveis, valorizando a tradição e a sustentabilidade local.<br>
+          <strong>Proposta de valor:</strong> Produtos artesanais com insumos selecionados, atendimento de proximidade e opções sob encomenda.<br>
+          <strong>Público-alvo:</strong> Moradores do bairro, empresas próximas (coffee breaks) e encomendas para eventos.<br>
+          <strong>Canais de venda:</strong> Loja física, pedidos por telefone/WhatsApp e redes sociais.<br>
+          <strong>Equipe:</strong> 2 atendentes e 1 padeiro (fixos); ref ref ref. (ajustar conforme sua realidade).<br>
+          <strong>Endereço/Atuação:</strong> Inserir bairro/cidade (opcional).<br>
+        </p>
+      </section>
+      <section>
+        <h2>Métricas principais (indicativas)</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Métrica</th>
+              <th>Como medir</th>
+              <th>Meta</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Ticket médio</td><td>Receita / nº de vendas</td><td>R$ 22–35</td></tr>
+            <tr><td>Margem bruta</td><td>(Receita – variáveis) / Receita</td><td>&gt; 40%</td></tr>
+            <tr><td>Giro de estoque</td><td>CMV / Estoque médio</td><td>Semanal</td></tr>
+            <tr><td>Recorrência</td><td>% clientes que compram 2x/mês</td><td>&gt; 35%</td></tr>
+            <tr><td>Prazo de entrega</td><td>Tempo médio de produção</td><td>&lt; 24h encomendas</td></tr>
+          </tbody>
+        </table>
+        <p class="summary">
+          <em>Dica:</em> Revise as metas acima de acordo com sua realidade. Você pode substituir por números reais do seu negócio.
+        </p>
+      </section>
+      <section>
+        <h2>Contatos</h2>
+        <p class="summary">
+          <strong>WhatsApp:</strong> (inserir número) — <strong>Instagram:</strong> @padaria.sabor.tradicao (exemplo).<br>
+          <strong>Horário de funcionamento:</strong> seg–sáb, 7h–19h (ajuste conforme sua operação).<br>
+        </p>
+      </section>
+    </div>
+
+    <footer>© 2025 Padaria Sabor &amp; Tradição — Modelo HTML com abas para GitHub Pages<br>
+Feito por Leticia Francine Moraes e Giovanna Rodrigues Carrier de Oliveira — 3º Ano 1 — Trabalho de Empreendedorismo</footer>
+  </div>
+
+  <script>
+    // Controle de abas robusto usando data-target
+    const tabs = document.querySelectorAll('.tab');
+    const contents = document.querySelectorAll('.tab-content');
+    function openTabById(id) {
+      tabs.forEach(t => t.classList.toggle('active', t.dataset.target === id));
+      contents.forEach(c => c.classList.toggle('active', c.id === id));
+    }
+    tabs.forEach(tab => tab.addEventListener('click', () => openTabById(tab.dataset.target)));
+  </script>
+</body>
+</html>
